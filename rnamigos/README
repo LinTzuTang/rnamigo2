@@ -1,0 +1,15 @@
+1. use environment.yml to build envirnoment
+2. inference.py and inference.sh to inference Rnamigos2
+Here I provided 9cpd as example, for do_inference in inference.sh:
+```
+do_inference(
+        cif_path=cif_path,
+        residue_list=residue_list_all.split(","),
+        ligands_path=ligands_path,
+        out_path=out_path_all,
+        dump_all=True,
+    )
+```
+* where cif_path is path to 9cpd.cif, ligands_path is path to SMILES ligands list.
+* The input of residue_list can get by get_residue_list function in inference.sh which will get all the residues in the graph of 9cpd.cif
+3. After inference, use read_score_9cpd.ipynb to read scores and ranks
